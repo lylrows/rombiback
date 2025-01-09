@@ -1,0 +1,28 @@
+﻿using RombiBack.Entities.ROM.SEGURIDAD.Models.Permisos;
+using RombiBack.Security.Model.UserAuth.Modules;
+using RombiBack.Security.Model.UserAuth;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using RombiBack.Entities.ROM.SEGURIDAD.Models.Perfiles;
+using RombiBack.Entities.ROM.ENTEL_RETAIL.Models.PlanificacionHorarios;
+
+namespace RombiBack.Repository.ROM.SEGURIDAD.MGM_Permisos
+{
+    public interface IPermisosRepository
+    {
+        Task<List<CodigosResponse>> GetCodigos(CodigosRequest request);
+        Task<List<AllUsersResponse>> GetAllUsers(AllUsersRequest request);
+
+        Task<List<ModuloDTOResponse>> GetModulosPermisos(UserDTORequest request);
+
+        Task<List<Perfiles>> GetPerfiles();
+
+        Task<List<Respuesta>> ValidarEstructuraModulos(List<PermisosModulosRequest> requests);
+
+
+
+    }
+}
